@@ -1,0 +1,3 @@
+DELETE FROM Drivers
+WHERE DriverID = 2;
+GO

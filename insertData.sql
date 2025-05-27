@@ -1,9 +1,30 @@
-INSERT INTO Drivers (DriverID, Nome, CNH, Endereco, Contato) 
-VALUES (4, 'Sebastião Pereira', 'AZU32654523', 'Rua Petesburgo, 102', '(51) 95555-5555');
-GO
-INSERT INTO Clients (ClientID, Nome, Empresa, Endereco, Contato)
-VALUES (4, 'Random Client', 'Rand', 'Av. Radint, 321', '(51) 92222-3333');
-GO
-INSERT INTO Orders (OrderID, ClientID, DriverID, DetalhesPedido, DataEntrega, Status)
-VALUES (4, 4, 4, 'Entrega de 20 Cabos de Aço', '2025-05-30', 'Pendente');
+-- Motoristas
+INSERT INTO Drivers (Nome, CNH, CategoriaCNH, ValidadeCNH, Endereco, Contato)
+VALUES 
+('João Pereira', '123456789', 'B', '2026-10-01', 'Rua Um, 123', 'joao@exemplo.com'),
+('Luciana Lima', '987654321', 'C', '2027-05-15', 'Rua Dois, 456', 'luciana@exemplo.com');
+
+-- Clientes
+INSERT INTO Clients (Nome, Empresa, Endereco, Contato, Preferencias)
+VALUES 
+('Carlos Souza', 'Loja Souza', 'Av. Principal, 100', 'carlos@lojasouza.com', 'Entrega à tarde'),
+('Fernanda Dias', 'Distribuidora Dias', 'Rua das Flores, 88', 'fernanda@dias.com', 'Evitar sábados');
+
+-- Pedidos
+INSERT INTO Orders (ClientID, DriverID, DetalhesPedido, DataEntrega, Status)
+VALUES 
+(1, 1, '10 caixas de papel A4', '2025-06-01', 'Pendente'),
+(2, 2, '5 pacotes de toner', '2025-06-03', 'Em trânsito');
+
+-- Histórico de entrega
+INSERT INTO DriverHistory (DriverID, OrderID, DataInicio, DataFim, Observacoes)
+VALUES
+(1, 1, '2025-06-01 08:00', '2025-06-01 10:30', 'Entrega feita dentro do prazo');
+
+-- Logs de eventos de entrega
+INSERT INTO DeliveryLog (OrderID, Evento, Descricao)
+VALUES
+(1, 'Saiu para entrega', 'Motorista João saiu às 08h00'),
+(1, 'Chegou ao destino', 'Chegou no local de entrega às 10h15'),
+(1, 'Entrega concluída', 'Cliente recebeu os produtos e assinou o comprovante');
 GO

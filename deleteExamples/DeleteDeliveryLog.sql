@@ -1,0 +1,3 @@
+DELETE FROM DeliveryLog
+WHERE OrderID = 1;
+GO

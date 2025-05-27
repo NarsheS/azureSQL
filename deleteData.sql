@@ -1,9 +1,0 @@
-DELETE FROM Orders
-WHERE OrderID = 4;
-GO
-DELETE FROM Clients
-WHERE ClientID = 4;
-GO
-DELETE FROM Drivers
-WHERE DriverID = 4;
-GO

@@ -1,0 +1,3 @@
+DELETE FROM Orders
+WHERE OrderID = 2;
+GO
