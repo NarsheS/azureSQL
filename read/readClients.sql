@@ -1,2 +1,2 @@
-SELECT * FROM Drivers;
+SELECT * FROM Clients;
 GO
